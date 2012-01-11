@@ -10,6 +10,8 @@ Source0: 	http://users.telenet.be/on4qz/qsstv/downloads/%{name}_%{version}.tgz
 Source1:        qsstv.png
 BuildRequires:	fftw-devel
 BuildRequires:	hamlib-devel
+BuildRequires:	qt4-devel
+BuildRequires:	qmake
 
 %description
 qsstv is an sstv app.
