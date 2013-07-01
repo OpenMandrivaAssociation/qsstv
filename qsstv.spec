@@ -1,5 +1,5 @@
 Name: 		qsstv
-Summary: 	QSSTV is an sstv app 
+Summary: 	Is an sstv app 
 Version: 	7.1.7
 Release: 	1
 License: 	GPLv2
