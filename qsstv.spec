@@ -1,7 +1,7 @@
 Name: 		qsstv
-Summary: 	Is an sstv app 
+Summary: 	Sstv application
 Version: 	7.1.7
-Release: 	1
+Release: 	2
 License: 	GPLv2
 Group: 		Communications
 Source0: 	http://users.telenet.be/on4qz/qsstv/downloads/%{name}_%{version}.tgz
