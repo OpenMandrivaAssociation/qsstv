@@ -11,6 +11,8 @@ BuildRequires:  pkgconfig(alsa)
 BuildRequires:  pkgconfig(libpulse-simple)
 BuildRequires:  pkgconfig(libpulse)
 BuildRequires:  pkgconfig(libopenjp2)
+BuildRequires:  pkgconfig(libv4l2)
+BuildRequires:  pkgconfig(libv4lconvert)
 BuildRequires:	hamlib-devel
 BuildRequires:	qt5-devel
 
