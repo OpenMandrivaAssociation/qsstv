@@ -28,6 +28,7 @@ You can send and receive images sent over radio using your soundcard.
 %make_build
 
 %install
+export INSTALL_ROOT=%{buildroot}
 %make_install
 
 %files
