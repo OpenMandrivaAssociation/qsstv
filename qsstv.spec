@@ -1,15 +1,14 @@
 Name: 		qsstv
 Summary: 	Sstv application
-Version: 	7.1.7
-Release: 	3
+Version: 	9.5.7
+Release: 	1
 License: 	GPLv2
 Group: 		Communications
-Source0: 	http://users.telenet.be/on4qz/qsstv/downloads/%{name}_%{version}.tgz
+Source0: 	http://users.telenet.be/on4qz/qsstv/downloads/%{name}_%{version}.tar.gz
 Source1:        qsstv.png
 BuildRequires:	pkgconfig(fftw3)
 BuildRequires:	hamlib-devel
-BuildRequires:	qt4-devel
-Patch0:		qsstv-7.1.7-gcc-47.patch
+BuildRequires:	qt5-devel
 
 %description
 qsstv is an sstv app.
@@ -27,7 +26,7 @@ You can send and receive images sent over radio using your soundcard.
 %patch0 -p0
 
 %build
-%qmake_qt4
+%qmake
 %make
 
 %install
