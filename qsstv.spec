@@ -1,7 +1,7 @@
 %define _empty_manifest_terminate_build 0
 
 Name: 		qsstv
-Summary: 	Sstv application
+Summary: 	Qt-based slow-scan TV, radio and fax, sstv
 Version: 	9.5.7
 Release: 	1
 License: 	GPLv2
@@ -20,8 +20,8 @@ BuildRequires:	hamlib-devel
 BuildRequires:	qt5-devel
 
 %description
-qsstv is an sstv app.
-You can send and receive images sent over radio using your soundcard.
+Qsstv is a program for receiving slow-scan television and fax. 
+These are modes used by hamradio operators. Qsstv uses a soundcard to send and receive images.
 
 %prep
 %setup -q -n qsstv
@@ -47,3 +47,6 @@ install -pm 0644 %{SOURCE2} %{buildroot}%{_mandir}/man1/
 
 %files
 %{_bindir}/*
+%{_datadir}/applications/qsstv.desktop
+%{_datadir}/icons/qsstv.png
+%{_mandir}/man1/qsstv.1.*
