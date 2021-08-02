@@ -33,5 +33,16 @@ You can send and receive images sent over radio using your soundcard.
 export INSTALL_ROOT=%{buildroot}
 %make_install
 
+# Install icon
+mkdir -p %{buildroot}%{_iconsdir}
+cp -f icons/qsstv.png %{buildroot}%{_iconsdir}/qsstv.png
+
+desktop-file-install \
+        --dir=%{buildroot}%{_datadir}/applications %{SOURCE1}
+
+# Install man page borrowed from Debian
+mkdir -p %{buildroot}%{_mandir}/man1
+install -pm 0644 %{SOURCE2} %{buildroot}%{_mandir}/man1/
+
 %files
 %{_bindir}/*
