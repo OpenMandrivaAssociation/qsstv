@@ -7,6 +7,7 @@ Group: 		Communications
 Source0: 	http://users.telenet.be/on4qz/qsstv/downloads/%{name}_%{version}.tar.gz
 Source1:        qsstv.png
 BuildRequires:	pkgconfig(fftw3)
+BuildRequires:  pkgconfig(libopenjp2)
 BuildRequires:	hamlib-devel
 BuildRequires:	qt5-devel
 
@@ -22,7 +23,8 @@ You can send and receive images sent over radio using your soundcard.
 %make_build
 
 %install
-%makeinstall_std
+%make_install
+
 %files
 %{_bindir}/*
 %{_datadir}/doc/%{name}/*
