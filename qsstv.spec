@@ -7,6 +7,9 @@ Group: 		Communications
 Source0: 	http://users.telenet.be/on4qz/qsstv/downloads/%{name}_%{version}.tar.gz
 Source1:        qsstv.png
 BuildRequires:	pkgconfig(fftw3)
+BuildRequires:  pkgconfig(alsa)
+BuildRequires:  pkgconfig(libpulse-simple)
+BuildRequires:  pkgconfig(libpulse)
 BuildRequires:  pkgconfig(libopenjp2)
 BuildRequires:	hamlib-devel
 BuildRequires:	qt5-devel
