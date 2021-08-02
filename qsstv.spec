@@ -23,8 +23,6 @@ You can send and receive images sent over radio using your soundcard.
         -e "s:-lhamlib:-L%{_libdir}/hamlib -lhamlib:g" src/src.pro
     sed -i -e "s:doc/qsstv:doc/qsstv:" src/configdialog.cpp
 
-%patch0 -p0
-
 %build
 %qmake
 %make
