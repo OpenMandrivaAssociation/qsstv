@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=qsstv
+GenericName=qsstv
+Comment=Qt-based slow-scan TV and fax
+Exec=qsstv
+Icon=qsstv
+Terminal=false
+Type=Application
+Categories=Audio;AudioVideo;HamRadio;
+Version=1.0

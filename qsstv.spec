@@ -1,37 +1,52 @@
+%define _empty_manifest_terminate_build 0
+
 Name: 		qsstv
-Summary: 	Sstv application
-Version: 	7.1.7
-Release: 	3
+Summary: 	Qt-based slow-scan TV, radio and fax, sstv
+Version: 	9.5.7
+Release: 	1
 License: 	GPLv2
 Group: 		Communications
-Source0: 	http://users.telenet.be/on4qz/qsstv/downloads/%{name}_%{version}.tgz
-Source1:        qsstv.png
+Source0: 	http://users.telenet.be/on4qz/qsstv/downloads/%{name}_%{version}.tar.gz
+Source1:        qsstv.desktop
+Source2:        qsstv.1
 BuildRequires:	pkgconfig(fftw3)
+BuildRequires:  pkgconfig(alsa)
+BuildRequires:  pkgconfig(libpulse-simple)
+BuildRequires:  pkgconfig(libpulse)
+BuildRequires:  pkgconfig(libopenjp2)
+BuildRequires:  pkgconfig(libv4l2)
+BuildRequires:  pkgconfig(libv4lconvert)
 BuildRequires:	hamlib-devel
-BuildRequires:	qt4-devel
-Patch0:		qsstv-7.1.7-gcc-47.patch
+BuildRequires:	qt5-devel
 
 %description
-qsstv is an sstv app.
-You can send and receive images sent over radio using your soundcard.
+Qsstv is a program for receiving slow-scan television and fax. 
+These are modes used by hamradio operators. Qsstv uses a soundcard to send and receive images.
 
 %prep
-%setup -q -n qsstv_%{version}
-    sed -i -e "s:/doc/\$\$TARGET:/doc/qsstv:" \
-        -e "s:/usr/local/bin:%{buildroot}/usr/bin:" \
-        -e "s:/usr/share/doc:%{buildroot}/usr/share/doc:" \
-        -e "s:target.extra:#target.extra:" \
-        -e "s:-lhamlib:-L%{_libdir}/hamlib -lhamlib:g" src/src.pro
-    sed -i -e "s:doc/qsstv:doc/qsstv:" src/configdialog.cpp
-
-%patch0 -p0
+%setup -q -n qsstv
 
 %build
-%qmake_qt4
-%make
+%qmake_qt5 PREFIX=/usr
+%make_build
 
 %install
-%makeinstall_std
+export INSTALL_ROOT=%{buildroot}
+%make_install
+
+# Install icon
+mkdir -p %{buildroot}%{_iconsdir}
+cp -f icons/qsstv.png %{buildroot}%{_iconsdir}/qsstv.png
+
+desktop-file-install \
+        --dir=%{buildroot}%{_datadir}/applications %{SOURCE1}
+
+# Install man page borrowed from Debian
+mkdir -p %{buildroot}%{_mandir}/man1
+install -pm 0644 %{SOURCE2} %{buildroot}%{_mandir}/man1/
+
 %files
 %{_bindir}/*
-%{_datadir}/doc/%{name}/*
+%{_datadir}/applications/qsstv.desktop
+%{_datadir}/icons/qsstv.png
+%{_mandir}/man1/qsstv.1.*
