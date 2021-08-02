@@ -33,4 +33,3 @@ export INSTALL_ROOT=%{buildroot}
 
 %files
 %{_bindir}/*
-%{_datadir}/doc/%{name}/*
