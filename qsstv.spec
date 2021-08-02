@@ -7,7 +7,8 @@ Release: 	1
 License: 	GPLv2
 Group: 		Communications
 Source0: 	http://users.telenet.be/on4qz/qsstv/downloads/%{name}_%{version}.tar.gz
-Source1:        qsstv.png
+Source1:        qsstv.desktop
+Source2:        qsstv.1
 BuildRequires:	pkgconfig(fftw3)
 BuildRequires:  pkgconfig(alsa)
 BuildRequires:  pkgconfig(libpulse-simple)
