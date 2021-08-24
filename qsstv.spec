@@ -2,7 +2,7 @@
 
 Name: 		qsstv
 Summary: 	Qt-based slow-scan TV, radio and fax, sstv
-Version: 	9.5.7
+Version: 	9.5.8
 Release: 	1
 License: 	GPLv2
 Group: 		Communications
