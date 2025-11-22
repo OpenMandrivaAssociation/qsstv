@@ -1,4 +1,4 @@
-%global debug_package %{nil}
+%undefine _debugsource_packages
 %define _empty_manifest_terminate_build 0
 # NOTE upstream  have not made a release tarball, run package-source.sh to create
 # NOTE an archive out of the latest git master branch and adjust the
@@ -18,6 +18,7 @@ Source2:        qsstv.1
 # Fix broken DRM decode for Qt6
 Patch0:		https://github.com/ON4QZ/QSSTV/pull/67/commits/659ef0c02068d76d82622875e413aa362407b677.patch#/fix-broken-drm-decode-for-qt6.patch
 
+BuildRequires:	hamlib++-devel
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(fftw3)
 BuildRequires:	pkgconfig(hamlib)
