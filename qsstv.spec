@@ -18,6 +18,7 @@ Source2:        qsstv.1
 # Fix broken DRM decode for Qt6
 Patch0:		https://github.com/ON4QZ/QSSTV/pull/67/commits/659ef0c02068d76d82622875e413aa362407b677.patch#/fix-broken-drm-decode-for-qt6.patch
 
+BuildRequires:	desktop-file-utils
 BuildRequires:	hamlib++-devel
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(fftw3)
